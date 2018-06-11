@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Controller.Base
 {
-    interface IBaseController<Usuario> : class
+    interface IBaseController<Usuario> 
     {
-        void Adicionar(T entity);
+        void Adicionar(Usuario entity);
 
-        List<T> ListarTodos();
+        List<Usuario> ListarTodos();
 
-        List<T> ListarPorNome(String nome);
+        List<Usuario> ListarPorNome(String nome);
 
-        T BuscarPorID(int id);
+        Usuario BuscarPorID(int id);
 
-        void Editar(T entity);
+        void Editar(Usuario entity);
 
         void Excluir(int id);
 
