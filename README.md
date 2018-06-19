@@ -1,5 +1,8 @@
 # SistemaTransportadora
 
-
-1 - Cálculo da distância (origem, destino) 
-2 - Em cima do calculo da distância, calcula o valor gasto com combustível. (Preço do diesel)
+* 1 - Matrícula
+* 2 - Nome
+* 3 - Distancia
+* 4 - Valor combustível
+* 5 - Cidade Destino
+* 6 - Cidade Origem
