@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -15,6 +16,6 @@ namespace Controller.DAL
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
-
+        public object Usuario { get; internal set; }
     }
 }

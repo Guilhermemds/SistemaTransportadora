@@ -8,9 +8,17 @@ namespace Modelos
 {
     public class Usuario
     {
-        public int  UsuarioID { get; set; }
+        public int  MatriculaID { get; set; }
+
+        public double distancia { get; set; }
+
+        public double valorCombustivel { get; set; }
 
         public string Nome { get; set; }
+
+        public string cidadeOrigem { get; set; }
+
+        public string cidadeDestino { get; set; }
 
         public bool Ativo { get; set; }
     }

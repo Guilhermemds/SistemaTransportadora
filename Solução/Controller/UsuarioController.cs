@@ -1,4 +1,6 @@
 ﻿using Controller.Base;
+using Controller.DAL;
+using Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,36 +9,48 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    public class UsuarioController<Usuario> : IBaseController<Usuario>
+    public class UsuarioController : IBaseController<Usuario>
     {
+        private Contexto contexto = new Contexto();
+
         public void Adicionar(Usuario entity)
         {
-            throw new NotImplementedException();
+            contexto.Usuarios.Add(entity);
+            contexto.SaveChanges();
+            
         }
 
         public Usuario BuscarPorID(int id)
         {
-            throw new NotImplementedException();
+            return contexto.Usuarios.Find(id);
         }
 
         public void Editar(Usuario entity)
         {
-            throw new NotImplementedException();
+            contexto.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            contexto.SaveChanges();
         }
 
         public void Excluir(int id)
         {
-            throw new NotImplementedException();
+            Usuario usu = BuscarPorID(id);
+
+            if(usu != null)
+            {
+                contexto.Usuarios.Remove(usu);
+
+                contexto.SaveChanges();
+            }
         }
 
         public List<Usuario> ListarPorNome(string nome)
         {
-            throw new NotImplementedException();
+            return contexto.Usuarios.Where(usu => usu.Nome == nome).ToList();
         }
 
         public List<Usuario> ListarTodos()
         {
-            throw new NotImplementedException();
+            return contexto.Usuarios.ToList();
         }
     }
 }
