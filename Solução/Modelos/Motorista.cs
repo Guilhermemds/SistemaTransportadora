@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace Modelos
 {
-    class Motorista
+    public class Motorista
     {
-        public string tipoFrete { get; set; }
-        
-        public string motoristaID { get; set; }
+        public int MatriculaID { get; set; }
 
-        public string modeloCaminhao { get; set; }
+        public string Nome { get; set; }
 
+        public string Telefone { get; set; }
 
+        public string Carteira { get; set; }
+
+        public string Cpf { get; set; }
+
+        public bool Ativo { get; set; }
     }
 }

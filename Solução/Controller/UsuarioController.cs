@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    public class UsuarioController : IBaseController<Usuario>
+    public class UsuarioController : IBaseController<Motorista>
     {
         private Contexto contexto = new Contexto();
 
-        public void Adicionar(Usuario entity)
+        public void Adicionar(Motorista entity)
         {
-            contexto.Usuarios.Add(entity);
+            contexto.Motorista.Add(entity);
             contexto.SaveChanges();
             
         }
 
-        public Usuario BuscarPorID(int id)
+        public Motorista BuscarPorID(int id)
         {
-            return contexto.Usuarios.Find(id);
+            return contexto.Motorista.Find(id);
         }
 
-        public void Editar(Usuario entity)
+        public void Editar(Motorista entity)
         {
             contexto.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
@@ -33,24 +33,24 @@ namespace Controller
 
         public void Excluir(int id)
         {
-            Usuario usu = BuscarPorID(id);
+            Motorista usu = BuscarPorID(id);
 
             if(usu != null)
             {
-                contexto.Usuarios.Remove(usu);
+                contexto.Motorista.Remove(usu);
 
                 contexto.SaveChanges();
             }
         }
 
-        public List<Usuario> ListarPorNome(string nome)
+        public List<Motorista> ListarPorNome(string nome)
         {
-            return contexto.Usuarios.Where(usu => usu.Nome == nome).ToList();
+            return contexto.Motorista.Where(usu => usu.Nome == nome).ToList();
         }
 
-        public List<Usuario> ListarTodos()
+        public List<Motorista> ListarTodos()
         {
-            return contexto.Usuarios.ToList();
+            return contexto.Motorista.ToList();
         }
     }
 }

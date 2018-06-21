@@ -24,5 +24,14 @@ namespace Wpf
         {
             InitializeComponent();
         }
+
+        private void Salvar_Click(object sender, RoutedEventArgs e)
+        {
+            string matricula = Matricula.Text;
+            string nome = Nome.Text;
+            string cpf = Cpf.Text;
+            string telefone = Telefone.Text;
+            string carteira = Carteira.Text;
+        }
     }
 }

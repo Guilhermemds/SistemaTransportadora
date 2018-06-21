@@ -15,7 +15,12 @@ namespace Controller.DAL
 
         }
 
-        public DbSet<Usuario> Usuarios { get; set; }
-        public object Usuario { get; internal set; }
+        public DbSet<Frete> Frete { get; set; }
+
+        public DbSet<Motorista> Motorista { get; set; }
+
+
+
+
     }
 }
