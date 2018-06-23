@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Modelos
 {
     public class Motorista
     {
+        [Key]
+        public int MotoristaID { get; set; }
+
         public int MatriculaID { get; set; }
 
         public string Nome { get; set; }

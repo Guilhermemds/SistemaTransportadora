@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    public class UsuarioController : IBaseController<Motorista>
+    public class MotoristasController : IBaseController<Motorista>
     {
         private Contexto contexto = new Contexto();
 
         public void Adicionar(Motorista entity)
         {
+            entity.Ativo = true;
             contexto.Motorista.Add(entity);
             contexto.SaveChanges();
             

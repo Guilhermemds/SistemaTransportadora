@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controller;
+using Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,11 +29,16 @@ namespace Wpf
 
         private void Salvar_Click(object sender, RoutedEventArgs e)
         {
-            string matricula = Matricula.Text;
-            string nome = Nome.Text;
-            string cpf = Cpf.Text;
-            string telefone = Telefone.Text;
-            string carteira = Carteira.Text;
+            Motorista m = new Motorista();
+            m.MatriculaID = int.Parse(Matricula.Text);
+            m.Nome = Nome.Text;
+            m.Cpf = Cpf.Text;
+            m.Telefone = Telefone.Text;
+            m.Carteira = Carteira.Text;
+
+            MotoristasController mc = new MotoristasController();
+            mc.Adicionar(m);
         }
-    }
+
+      }
 }
