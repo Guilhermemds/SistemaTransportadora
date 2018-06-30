@@ -38,7 +38,44 @@ namespace Wpf
 
             MotoristasController mc = new MotoristasController();
             mc.Adicionar(m);
+
+            
         }
 
-      }
+        private void listar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            InitializeComponent();
+
+        }
+
+        private void Janela_Loaded(object sender, RoutedEventArgs e)
+        {
+            CarregarLista();
+        }
+
+        private void CarregarLista()
+        {
+            MotoristasController mc = new MotoristasController();
+            listar.ItemsSource = mc.ListarTodos();           
+            
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           MotoristasController mc = new MotoristasController();
+           listar.ItemsSource = mc.ListarPorNome(Pesquisar.Text);
+
+            //listar.ItemsSource = mc.Excluir();
+            // listar.Items.Remove(listar.SelectedItem)            
+        }
+
+      private void Excluir(object sender, RoutedEventArgs e)
+        {
+            MotoristasController mc = new MotoristasController();
+            int id = ((Motorista)listar.SelectedItem).MatriculaID;
+            mc.Excluir(id);            
+            MessageBox.Show("Motorista Excluido com sucesso");
+        }
+    }
 }
