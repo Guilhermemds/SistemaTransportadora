@@ -38,7 +38,7 @@ namespace Wpf
 
             MotoristasController mc = new MotoristasController();
             mc.Adicionar(m);
-
+            LimpaTela();
             
         }
 
@@ -50,7 +50,8 @@ namespace Wpf
 
         private void Janela_Loaded(object sender, RoutedEventArgs e)
         {
-            CarregarLista();
+           CarregarLista();
+            
         }
 
         private void CarregarLista()
@@ -58,6 +59,13 @@ namespace Wpf
             MotoristasController mc = new MotoristasController();
             listar.ItemsSource = mc.ListarTodos();           
             
+            
+        }
+
+        void LimpaTela()
+        {
+            
+            Matricula.Text =  Nome.Text = Cpf.Text = Telefone.Text = Carteira.Text = " ";
             
         }
 
@@ -73,7 +81,8 @@ namespace Wpf
       private void Excluir(object sender, RoutedEventArgs e)
         {
             MotoristasController mc = new MotoristasController();
-            int id = ((Motorista)listar.SelectedItem).MatriculaID;
+             int id = ((Motorista)listar.SelectedItem).MotoristaID;
+            //int id = (listar.SelectedItem as Motorista).MatriculaID; 
             mc.Excluir(id);            
             MessageBox.Show("Motorista Excluido com sucesso");
         }
