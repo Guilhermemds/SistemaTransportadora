@@ -5,42 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Janela_Loaded">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="Matricula" HorizontalAlignment="Left" Height="23" Margin="129,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Nome" HorizontalAlignment="Left" Height="23" Margin="129,148,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Cpf" HorizontalAlignment="Left" Height="23" Margin="129,176,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.467,0.891"/>
-        <TextBox x:Name="Telefone" HorizontalAlignment="Left" Height="23" Margin="129,202,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Carteira" HorizontalAlignment="Left" Height="23" Margin="129,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="72,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.49,1.125" Width="52" Height="22"><Run Text="Mat"/><Run Text="ricula"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="72,148,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="72,228,0,0" TextWrapping="Wrap" Text="Carteira" VerticalAlignment="Top" RenderTransformOrigin="0.598,3.625"/>
-        <TextBlock HorizontalAlignment="Left" Margin="72,205,0,0" TextWrapping="Wrap" Text="Telefone" VerticalAlignment="Top" RenderTransformOrigin="0.143,0.938"/>
-        <TextBlock HorizontalAlignment="Left" Margin="72,176,0,0" TextWrapping="Wrap" Text="Cpf" VerticalAlignment="Top" RenderTransformOrigin="0.908,0.438"/>
-        <Button x:Name="Salvar" Content="Salvar" HorizontalAlignment="Left" Margin="57,265,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.527,0.5" Click="Salvar_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="908,363,-123,-88" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <DataGrid x:Name="listar" HorizontalAlignment="Left" Height="346" Margin="330,30,0,0" VerticalAlignment="Top" Width="452" SelectionChanged="listar_SelectionChanged">
-         
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id"   Binding="{Binding Path=MotoristaID}" />
-                <DataGridTextColumn Header="Matricula"   Binding="{Binding Path=MatriculaID}" />
-                <DataGridTextColumn Header="Nome"   Binding="{Binding Path=Nome}" />
-                <DataGridTextColumn Header="Cpf"   Binding="{Binding Path=Cpf}" />
-                <DataGridTextColumn Header="Telefone"   Binding="{Binding Path=Telefone}" />
-                <DataGridTextColumn Header="Carteira"   Binding="{Binding Path=Carteira}" />
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Click="Excluir">Excluir</Button>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
 
-            </DataGrid.Columns>
-        </DataGrid>
-        <TextBox x:Name="Pesquisar" HorizontalAlignment="Left" Height="23" Margin="55,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="PesquisarPorNome" Content="Pesquisar Por Nome" HorizontalAlignment="Left" Margin="57,318,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click"/>
-
+        <TextBox x:Name="Nome" HorizontalAlignment="Left" Height="23" Margin="314,141,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Cpf" HorizontalAlignment="Left" Height="23" Margin="314,174,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.467,0.891"/>
+        <TextBox x:Name="Telefone" HorizontalAlignment="Left" Height="23" Margin="314,206,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Carteira" HorizontalAlignment="Left" Margin="314,243,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.Items>
+                <ComboBoxItem>B</ComboBoxItem>
+                <ComboBoxItem>C</ComboBoxItem>
+            </ComboBox.Items>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="266,143,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="266,246,0,0" TextWrapping="Wrap" Text="Carteira" VerticalAlignment="Top" RenderTransformOrigin="0.598,3.625"/>
+        <TextBlock HorizontalAlignment="Left" Margin="266,205,0,0" TextWrapping="Wrap" Text="Telefone" VerticalAlignment="Top" RenderTransformOrigin="0.143,0.938"/>
+        <TextBlock HorizontalAlignment="Left" Margin="266,176,0,0" TextWrapping="Wrap" Text="Cpf" VerticalAlignment="Top" RenderTransformOrigin="0.908,0.438"/>
+        <Button x:Name="Salvar" Content="Salvar" HorizontalAlignment="Left" Margin="258,288,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.527,0.5" Click="Salvar_Click"/>
+        <Button x:Name="Tabela" Content="Ver Tabela" HorizontalAlignment="Left" Margin="380,288,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
+        
 
     </Grid>
 </Window>

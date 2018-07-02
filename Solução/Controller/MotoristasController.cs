@@ -26,6 +26,8 @@ namespace Controller
             return contexto.Motorista.Find(id);
         }
 
+
+
         public void Editar(Motorista entity)
         {
             contexto.Entry(entity).State = System.Data.Entity.EntityState.Modified;
@@ -52,6 +54,11 @@ namespace Controller
         public List<Motorista> ListarTodos()
         {
             return contexto.Motorista.ToList();
+        }
+
+        public Motorista BuscarPorHabilitacao(string id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

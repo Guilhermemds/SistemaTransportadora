@@ -16,6 +16,8 @@ namespace Controller.Base
 
         Usuario BuscarPorID(int id);
 
+        Usuario BuscarPorHabilitacao(string id);
+
         void Editar(Usuario entity);
 
         void Excluir(int id);

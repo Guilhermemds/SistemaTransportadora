@@ -29,8 +29,7 @@ namespace Wpf
 
         private void Salvar_Click(object sender, RoutedEventArgs e)
         {
-            Motorista m = new Motorista();
-            m.MatriculaID = int.Parse(Matricula.Text);
+            Motorista m = new Motorista();         
             m.Nome = Nome.Text;
             m.Cpf = Cpf.Text;
             m.Telefone = Telefone.Text;
@@ -41,50 +40,20 @@ namespace Wpf
             LimpaTela();
             
         }
-
-        private void listar_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            InitializeComponent();
-
-        }
-
-        private void Janela_Loaded(object sender, RoutedEventArgs e)
-        {
-           CarregarLista();
-            
-        }
-
-        private void CarregarLista()
-        {
-            MotoristasController mc = new MotoristasController();
-            listar.ItemsSource = mc.ListarTodos();           
-            
-            
-        }
-
         void LimpaTela()
         {
-            
-            Matricula.Text =  Nome.Text = Cpf.Text = Telefone.Text = Carteira.Text = " ";
-            
+
+            Nome.Text = Cpf.Text = Telefone.Text = Carteira.Text = " ";
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           MotoristasController mc = new MotoristasController();
-           listar.ItemsSource = mc.ListarPorNome(Pesquisar.Text);
-
-            //listar.ItemsSource = mc.Excluir();
-            // listar.Items.Remove(listar.SelectedItem)            
-        }
-
-      private void Excluir(object sender, RoutedEventArgs e)
-        {
-            MotoristasController mc = new MotoristasController();
-             int id = ((Motorista)listar.SelectedItem).MotoristaID;
-            //int id = (listar.SelectedItem as Motorista).MatriculaID; 
-            mc.Excluir(id);            
-            MessageBox.Show("Motorista Excluido com sucesso");
+            
+            Tabela tabela = new Tabela();
+            this.Close();
+            tabela.ShowDialog();
+            
         }
     }
 }

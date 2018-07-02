@@ -5,9 +5,7 @@ namespace Modelos
     public class Motorista
     {
         [Key]
-        public int MotoristaID { get; set; }
-
-        public int MatriculaID { get; set; }
+        public int MotoristaID { get; set; }      
 
         public string Nome { get; set; }
 
