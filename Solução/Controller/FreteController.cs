@@ -1,4 +1,5 @@
 ﻿using Controller.Base;
+using Controller.DAL;
 using Modelos;
 using System;
 using System.Collections.Generic;
@@ -8,24 +9,27 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class FreteControeller : IBaseController<Frete>
+    public class FreteController : IBaseController<FreteModelo>
     {
-        public void Adicionar(Frete entity)
+        private Contexto contexto = new Contexto();
+        public void Adicionar(FreteModelo entity)
+        {
+            entity.Ativo = true;            
+            contexto.Frete.Add(entity);
+            contexto.SaveChanges();
+        }
+
+        public FreteModelo BuscarPorHabilitacao(string id)
         {
             throw new NotImplementedException();
         }
 
-        public Frete BuscarPorHabilitacao(string id)
+        public FreteModelo BuscarPorID(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Frete BuscarPorID(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Editar(Frete entity)
+        public void Editar(FreteModelo entity)
         {
             throw new NotImplementedException();
         }
@@ -35,14 +39,14 @@ namespace Controller
             throw new NotImplementedException();
         }
 
-        public List<Frete> ListarPorNome(string nome)
+        public List<FreteModelo> ListarPorNome(string nome)
         {
             throw new NotImplementedException();
         }
 
-        public List<Frete> ListarTodos()
+        public List<FreteModelo> ListarTodos()
         {
-            throw new NotImplementedException();
+            return contexto.Frete.ToList();
         }
     }
 }

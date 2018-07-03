@@ -55,5 +55,14 @@ namespace Wpf
             tabela.ShowDialog();
             
         }
+
+        private void Calcular_Click(object sender, RoutedEventArgs e)
+        {
+
+            Frete fte = new Frete();
+            this.Close();
+            fte.ShowDialog();
+
+        }
     }
 }

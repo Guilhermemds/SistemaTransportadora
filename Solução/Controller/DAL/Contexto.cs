@@ -15,7 +15,7 @@ namespace Controller.DAL
 
         }
 
-        public DbSet<Frete> Frete { get; set; }
+        public DbSet<FreteModelo> Frete { get; set; }
 
         public DbSet<Motorista> Motorista { get; set; }
 

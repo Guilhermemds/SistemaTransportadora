@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace Modelos
 {
-    public class Frete
+    public class FreteModelo
     {
         [Key]
         public int FreteID { get; set; }
 
-        public string DistanciaPercorrida { get; set; }
+        public double DistanciaPercorrida { get; set; }
 
         public string data { get; set; }
 
         public string Carteira { get; set; }
+
+        public double totalFrete { get; set; }
 
         public bool Ativo { get; set; }
 

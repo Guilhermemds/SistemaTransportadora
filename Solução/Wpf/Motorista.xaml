@@ -21,9 +21,10 @@
         <TextBlock HorizontalAlignment="Left" Margin="266,246,0,0" TextWrapping="Wrap" Text="Carteira" VerticalAlignment="Top" RenderTransformOrigin="0.598,3.625"/>
         <TextBlock HorizontalAlignment="Left" Margin="266,205,0,0" TextWrapping="Wrap" Text="Telefone" VerticalAlignment="Top" RenderTransformOrigin="0.143,0.938"/>
         <TextBlock HorizontalAlignment="Left" Margin="266,176,0,0" TextWrapping="Wrap" Text="Cpf" VerticalAlignment="Top" RenderTransformOrigin="0.908,0.438"/>
-        <Button x:Name="Salvar" Content="Salvar" HorizontalAlignment="Left" Margin="258,288,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.527,0.5" Click="Salvar_Click"/>
-        <Button x:Name="Tabela" Content="Ver Tabela" HorizontalAlignment="Left" Margin="380,288,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
-        
+        <Button x:Name="Salvar" Content="Salvar" HorizontalAlignment="Left" Margin="342,287,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.527,0.5" Click="Salvar_Click"/>
+        <Button x:Name="Tabela" Content="Motorista Cadastrados" HorizontalAlignment="Left" Margin="314,312,0,0" VerticalAlignment="Top" Width="131" Click="Button_Click" Height="21"/>
+        <Button Content="Calcular Frete" x:Name="btnFrete" HorizontalAlignment="Left" Margin="314,338,0,0" VerticalAlignment="Top" Width="131" Height="18" Click="Calcular_Click"/>
+
 
     </Grid>
 </Window>

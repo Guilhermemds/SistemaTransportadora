@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frete.cs" />
+    <Compile Include="FreteModelo.cs" />
     <Compile Include="Motorista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

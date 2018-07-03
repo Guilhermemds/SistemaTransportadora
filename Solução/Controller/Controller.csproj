@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="Base\IBaseController.cs" />
     <Compile Include="DAL\Contexto.cs" />
-    <Compile Include="FreteControeller.cs" />
+    <Compile Include="FreteController.cs" />
     <Compile Include="MotoristasController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
