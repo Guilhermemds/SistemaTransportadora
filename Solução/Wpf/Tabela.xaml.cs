@@ -66,6 +66,39 @@ namespace Wpf
             CarregarLista();
         }
 
+        private void Alterar(object sender, RoutedEventArgs e)
+        {
+            if (listar.SelectedIndex >= 0)
+            {
+
+                Motorista dgLinha = (Motorista)listar.SelectedItem;
+
+                Nome.Text = dgLinha.Nome;
+                Cpf.Text = dgLinha.Cpf;
+                Telefone.Text = dgLinha.Telefone;
+
+            }
+        }
+
         
+        
+        private void Alte_Click(object sender, RoutedEventArgs e)
+        {
+            MotoristasController mc = new MotoristasController();
+
+            Motorista m = new Motorista();           
+            int id = ((Motorista)listar.SelectedItem).MotoristaID;
+            
+            // Motorista m = m.MotoristaID.ToString(Convert.ToInt32(ID.Text));
+
+            m.MotoristaID = id;
+            m.Nome = Nome.Text;            
+            m.Cpf = Cpf.Text;
+            m.Telefone = Telefone.Text;                        
+            
+            mc.Editar(m);
+
+            CarregarLista();
+        }
     }
 }

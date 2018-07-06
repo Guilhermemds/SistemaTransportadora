@@ -30,6 +30,7 @@ namespace Controller
 
         public void Editar(Motorista entity)
         {
+            entity.Ativo = true;
             contexto.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
         }

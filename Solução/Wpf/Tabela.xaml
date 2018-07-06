@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Tabela" Height="307.895" Width="678.618" Loaded="Janela_Loaded">
     <Grid>
-        <DataGrid x:Name="listar" HorizontalAlignment="Left" Height="174" Margin="330,63,0,0" VerticalAlignment="Top" Width="297" SelectionChanged="listar_SelectionChanged" CanUserAddRows="False" AutoGenerateColumns="False" >
+        <DataGrid x:Name="listar" HorizontalAlignment="Left" Height="174" Margin="330,63,0,0" VerticalAlignment="Top" Width="297" SelectionChanged="listar_SelectionChanged" CanUserAddRows="False" AutoGenerateColumns="False" SelectionMode="Single" >
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id"   Binding="{Binding Path=MotoristaID}" />
@@ -18,16 +18,27 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Click="Excluir">Excluir</Button>
-                        </DataTemplate>
+                           <StackPanel>
+                            <Button x:Name="Excluir" Click="Excluir">Excluir</Button>
+                            <Button x:Name="Alterar" Click="Alterar">Alterar</Button>                                
+                           </StackPanel>
+                        </DataTemplate>                      
+
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
             </DataGrid.Columns>
         </DataGrid>
 
-        <TextBox x:Name="Pesquisar" HorizontalAlignment="Left" Height="23" Margin="82,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="PesquisarPorNome" Content="Pesquisar Por Nome" HorizontalAlignment="Left" Margin="84,81,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click"/>
+        <TextBox x:Name="Pesquisar" HorizontalAlignment="Left" Height="23" Margin="190,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="PesquisarPorNome" Content="Pesquisar Por Nome" HorizontalAlignment="Left" Margin="192,77,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click"/>
+        <TextBox x:Name="Nome" HorizontalAlignment="Left" Height="23" Margin="42,72,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Cpf" HorizontalAlignment="Left" Height="23" Margin="42,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="73,50,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="73,98,0,0" TextWrapping="Wrap" Text="Cpf" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="73,147,0,0" TextWrapping="Wrap" Text="Telefone" VerticalAlignment="Top"/>
+        <TextBox x:Name="Telefone" HorizontalAlignment="Left" Height="23" Margin="42,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Alte" Content="Salvar Alterações" HorizontalAlignment="Left" Margin="42,217,0,0" VerticalAlignment="Top" Width="120" Click="Alte_Click"/>
 
     </Grid>
 </Window>

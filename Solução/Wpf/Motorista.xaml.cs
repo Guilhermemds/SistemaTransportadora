@@ -39,7 +39,10 @@ namespace Wpf
             mc.Adicionar(m);
             LimpaTela();
             
+
         }
+
+
         void LimpaTela()
         {
 
@@ -54,6 +57,7 @@ namespace Wpf
             this.Close();
             tabela.ShowDialog();
             
+            
         }
 
         private void Calcular_Click(object sender, RoutedEventArgs e)
@@ -62,6 +66,7 @@ namespace Wpf
             Frete fte = new Frete();
             this.Close();
             fte.ShowDialog();
+            
 
         }
     }
